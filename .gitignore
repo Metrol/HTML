@@ -1,0 +1,9 @@
+# Only allow for real project files to integrate with GIT
+#
+# Michael Collette <metrol@metrol.net>
+# 20150520-0.0.1
+#
+.idea/
+public/
+vendor/
+composer.lock
