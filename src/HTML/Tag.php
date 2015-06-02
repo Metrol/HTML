@@ -207,7 +207,7 @@ class Tag
      */
     public function setBefore($text)
     {
-        $this->before = \htmlentities($text);
+        $this->before = Text::htmlent($text);
 
         return $this;
     }
@@ -245,7 +245,7 @@ class Tag
      */
     public function setAfter($text)
     {
-        $this->after = \htmlentities($text);
+        $this->after = Text::htmlent($text);
 
         return $this;
     }
@@ -358,7 +358,7 @@ class Tag
      */
     public function setContent($text)
     {
-        $this->content = \htmlentities($text);
+        $this->content = Text::htmlent($text);
 
         return $this;
     }
