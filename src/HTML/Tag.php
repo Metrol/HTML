@@ -444,6 +444,21 @@ class Tag
     }
 
     /**
+     * Add a style to the tag
+     *
+     * @param string $styleName
+     * @param string $styleValue
+     *
+     * @return $this
+     */
+    public function addStyle($styleName, $styleValue)
+    {
+        $this->getAttributeObj()->addStyle($styleName, $styleValue);
+
+        return $this;
+    }
+
+    /**
      * Sets the CSS ID for this tag
      *
      * @param string
