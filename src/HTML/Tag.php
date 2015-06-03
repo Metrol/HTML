@@ -63,7 +63,7 @@ class Tag
      *
      * @var string
      */
-    private $before;
+    protected $before;
 
     /**
      * For tags that will contain information within them, this will be the var
@@ -71,14 +71,14 @@ class Tag
      *
      * @var string
      */
-    private $content;
+    protected $content;
 
     /**
      * Text that appears after the closing tag
      *
      * @var string
      */
-    private $after;
+    protected $after;
 
     /**
      * Stores the name of the tag to later be used to assemble output from here.
