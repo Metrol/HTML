@@ -44,11 +44,11 @@ class TagTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('<xyz>Howdy</xyz>', $tag->output());
 
         $tag->setBefore('Hey &')->setAfter('There!');
-        $this->assertEquals('Hey &amp;<xyz>Howdy</xyz>There!', $tag->output());
+        $this->assertEquals('Hey &amp;<xyz>Howdy</xyz>There&excl;', $tag->output());
 
         $this->assertEquals('Hey &amp;', $tag->getBefore());
         $this->assertEquals('Howdy', $tag->getContent());
-        $this->assertEquals('There!', $tag->getAfter());
+        $this->assertEquals('There&excl;', $tag->getAfter());
     }
 
     /**
