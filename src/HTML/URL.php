@@ -128,6 +128,25 @@ class URL
     }
 
     /**
+     * Determines if there is anything to output from this object
+     *
+     * @return boolean
+     */
+    public function isEmpty()
+    {
+        $rtn = false;
+
+        $this->assemble();
+
+        if ( empty($this->urlValue) )
+        {
+            $rtn = true;
+        }
+
+        return $rtn;
+    }
+
+    /**
      * Will take apart the passed in URL and store its various components as
      * member variables.
      *
