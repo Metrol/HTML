@@ -235,7 +235,7 @@ class Attribute
                 break;
 
             default:
-                $this->attribs[$key] = $value;
+                $this->attribs[$key] = strval($value);
         }
 
         return $this;
