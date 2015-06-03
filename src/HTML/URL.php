@@ -334,9 +334,7 @@ class URL
                     $dom .= ":" . intval($this->port);
                 }
 
-                if ( strlen($this->dir) > 0 AND substr($this->dir, 0,
-                                                       1) != '/'
-                )
+                if ( strlen($this->dir) > 0 AND substr($this->dir, 0, 1) != '/' )
                 {
                     $dom .= '/';
                 }
@@ -345,7 +343,14 @@ class URL
                     $dom .= '/';
                 }
 
-                $url = $this->transport . '://' . $userPass . $dom . $url;
+                if ( $this->transport == 'javascript')
+                {
+                    $url = 'javascript:'.$this->domain;
+                }
+                else
+                {
+                    $url = $this->transport . '://' . $userPass . $dom . $url;
+                }
             }
             else
             {
