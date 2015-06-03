@@ -49,7 +49,7 @@ class URLTest extends \PHPUnit_Framework_TestCase
         $url->setURL('ftp://www.domain.com/');
         $this->assertEquals('ftp', $url->transport);
 
-        $url->setURL('javascript://www.domain.com/');
+        $url->setURL('javascript:doSomething("xyz")');
         $this->assertEquals('javascript', $url->transport);
 
         $url->setURL('file://www.domain.com/');
@@ -208,6 +208,23 @@ class URLTest extends \PHPUnit_Framework_TestCase
         $url->setURL('http://domain.com/?y=foobar');
 
         $this->assertEquals('http://domain.com/?x=1234&y=foobar', $url->output());
+    }
+
+    /**
+     * Javascript callers
+     *
+     */
+    public function testJavaScriptCallers()
+    {
+        $url = new URL;
+
+        $url->setTransport('javascript')
+            ->setDomain('doSomething("xyz")');
+
+        $this->assertEquals('javascript:doSomething("xyz")', $url->output());
+
+        $url->setURL('javascript:doSomething("xyz")', $url->output());
+        $this->assertEquals('javascript:doSomething("xyz")', $url->output());
     }
 
     /**
