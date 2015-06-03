@@ -100,7 +100,7 @@ class Attribute
     /**
      * Determine if an attribute exists or not
      *
-     * @param string
+     * @param string $key
      *
      * @return boolean
      */
@@ -129,7 +129,7 @@ class Attribute
     /**
      * Removes an attribute from the tag based on its name
      *
-     * @param string
+     * @param string $key
      *
      * @return $this
      */
@@ -158,7 +158,7 @@ class Attribute
     /**
      * Provide the value associated with an attribute.
      *
-     * @param string
+     * @param string $key
      *
      * @return string
      */
@@ -187,11 +187,12 @@ class Attribute
     }
 
     /**
-     * Use this to insure that the attribute being passed in only exists a single
-     * time within a tag
+     * Use this to insure that the attribute being passed in only exists a
+     * single time within a tag.  Earlier references will be replaced.
+     * Other than Styles and Classes this is identical to the add() method.
      *
-     * @param string
-     * @param string
+     * @param string $key
+     * @param string $value
      *
      * @return $this
      */
@@ -217,8 +218,8 @@ class Attribute
      * To be used by all the various attribute methods to get their attributes
      * properly added to the stack.
      *
-     * @param string
-     * @param string
+     * @param string $key
+     * @param string $value
      *
      * @return $this
      */
