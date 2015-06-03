@@ -403,6 +403,18 @@ class Tag
     }
 
     /**
+     * Fetch the specified attribute value
+     *
+     * @param string $attributeName
+     *
+     * @return string;
+     */
+    public function getAttribute($attributeName)
+    {
+        return $this->getAttributeObj()->get($attributeName);
+    }
+
+    /**
      * Assign a JavaScript action to a DOM event
      *
      * @param string $jsCall Javascript to run

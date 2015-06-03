@@ -63,6 +63,7 @@ class TagTest extends \PHPUnit_Framework_TestCase
             ->addAttribute('size', 'big');
 
         $this->assertEquals('<xyz title="Howdy" size="big">', $tag->output());
+        $this->assertEquals('Howdy', $tag->getAttribute('title'));
 
         $tag->setID('X123');
         $this->assertEquals('<xyz title="Howdy" size="big" id="X123">', $tag->output());
