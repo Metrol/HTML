@@ -74,5 +74,8 @@ class TagTest extends \PHPUnit_Framework_TestCase
 
         $tag->getAttributeObj()->deleteClass('shiny');
         $this->assertEquals('<xyz class="happy people">', $tag->output());
+
+        $tag->addStyle('color', 'blue');
+        $this->assertEquals('<xyz class="happy people" style="color: blue;">', $tag->output());
     }
 }
