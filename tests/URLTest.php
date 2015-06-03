@@ -23,6 +23,13 @@ class URLTest extends \PHPUnit_Framework_TestCase
         $url = new URL;
         $this->assertInstanceOf('\Metrol\HTML\URL', $url);
         $this->assertEmpty($url->output());
+
+        $this->assertTrue( $url->isEmpty() );
+
+        $url->setDomain('www.domain.com')
+            ->setTransport('ftp');
+
+        $this->assertFalse( $url->isEmpty() );
     }
 
     /**
